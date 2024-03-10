@@ -2,7 +2,7 @@ import Fastify from 'fastify';
 import { app } from './app/app';
 
 const host = process.env.HOST ?? 'localhost';
-const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+const port = process.env.PORT ? Number(process.env.PORT) : 5000;
 
 // Instantiate Fastify with some config
 const server = Fastify({
@@ -18,6 +18,9 @@ server.listen({ port, host }, (err) => {
     server.log.error(err);
     process.exit(1);
   } else {
-    console.log(`[ ready ] http://${host}:${port}`);
+    console.log(`
+    SERVER IS RUNNING on PORT --> ${port}
+    
+    `);
   }
 });
